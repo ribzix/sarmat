@@ -1,1 +1,1 @@
-# Semi Automatic Remote Managment of Trains
+# Semi Automatic Remote Management of Trains
