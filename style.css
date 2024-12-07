@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+h1 {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  margin: 0;
+  padding: 20px 0;
+}
+#train-data {
+  padding: 20px;
+}
+.train {
+  background: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
