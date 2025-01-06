@@ -1,11 +1,14 @@
 // Firebase configuration
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCTR1aE85BsYpesMGm-E_PBTLRTVpppImE",
+  authDomain: "unified-dispatching-center.firebaseapp.com",
+  projectId: "unified-dispatching-center",
+  storageBucket: "unified-dispatching-center.appspot.com",
+  messagingSenderId: "1060170888038",
+  appId: "1:1060170888038:web:ef251814f903e673058ea7"
 };
 
 // Initialize Firebase
