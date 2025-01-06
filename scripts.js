@@ -2,6 +2,7 @@
 const firebaseConfig = {
   apiKey: "AIzaSyCTR1aE85BsYpesMGm-E_PBTLRTVpppImE",
   authDomain: "unified-dispatching-center.firebaseapp.com",
+  databaseURL: "https://unified-dispatching-center-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "unified-dispatching-center",
   storageBucket: "unified-dispatching-center.appspot.com",
   messagingSenderId: "1060170888038",
