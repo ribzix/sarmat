@@ -23,33 +23,35 @@
                 <button id="trainsTab" class="active" onclick="showTab('trains')">Trains</button>
                 <button id="playersTab" onclick="showTab('players')">Players</button>
             </div>
+            <button id="logoutButton" onclick="logout()">Logout</button>
         </div>
         
         <div id="trains" class="content active">
             <h2>Train Positions</h2>
-            <div class="map">Train map will be displayed here</div>
+            <ul id="trainList">
+                <!-- Trains dynamically populated -->
+            </ul>
         </div>
 
         <div id="players" class="content">
             <h2>Player Roles</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Player</th>
-                            <th>Role</th>
-                        </tr>
-                    </thead>
-                    <tbody id="playerTable">
-                        <!-- Dynamic content -->
-                    </tbody>
-                </table>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody id="playerTable">
+                    <!-- Players dynamically populated -->
+                </tbody>
+            </table>
         </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
