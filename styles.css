@@ -79,6 +79,7 @@ li {
   background-color: #f5f5f5;
   border: 1px solid #ddd;
 }
+
 body {
-  background: radial-gradient(45deg, #060606, #341f53);
+  background-image: radial-gradient(45deg, #060606, #341f53);
 }
