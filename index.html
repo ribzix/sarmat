@@ -10,48 +10,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="login" class="login">
-        <h1>rotransit Login</h1>
-        <form onsubmit="handleLogin(event)">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button class="shiny-cta" type="submit">Login</button>
-        </form>
+  <div class = "login-form">
+    <h1>Dashboard</h1>
+    <div class = "input-box">
+      <input type="text" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
     </div>
-
-    <div id="dashboard" style="display: none;">
-        <div class="header">
-            <h1>rotransit Dashboard</h1>
-            <div class="nav">
-                <button id="trainsTab" class="active" onclick="showTab('trains')">Trains</button>
-                <button id="playersTab" onclick="showTab('players')">Players</button>
-            </div>
-            <button id="logoutButton" onclick="logout()">Logout</button>
-        </div>
-        
-        <div id="trains" class="content active">
-            <h2>Train Positions</h2>
-            <ul id="trainList">
-                <!-- Trains dynamically populated -->
-            </ul>
-        </div>
-
-        <div id="players" class="content">
-            <h2>Player Roles</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Player</th>
-                        <th>Role</th>
-                    </tr>
-                </thead>
-                <tbody id="playerTable">
-                    <!-- Players dynamically populated -->
-                </tbody>
-            </table>
-        </div>
-    </div>
-
+  </div>
+  
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>    
