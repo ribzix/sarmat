@@ -1,17 +1,29 @@
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "<YOUR_API_KEY>",
-  authDomain: "<YOUR_PROJECT_ID>.firebaseapp.com",
-  databaseURL: "https://<YOUR_PROJECT_ID>.firebaseio.com",
-  projectId: "<YOUR_PROJECT_ID>",
-  storageBucket: "<YOUR_PROJECT_ID>.appspot.com",
-  messagingSenderId: "<YOUR_SENDER_ID>",
-  appId: "<YOUR_APP_ID>"
-};
+// Function to fetch train data from Roblox game
+async function fetchTrainData() {
+  try {
+    const response = await fetch('https://your-roblox-game-api-endpoint/trains');
+    const trainData = await response.json();
+    renderTrainData(trainData);
+  } catch (error) {
+    console.error('Error fetching train data:', error);
+    document.getElementById('train-data').innerHTML = '<p>Error fetching train data.</p>';
+  }
+}
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+// Function to send command to Roblox game
+async function sendCommand(command) {
+  try {
+    await fetch('https://your-roblox-game-api-endpoint/command', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ command })
+    });
+  } catch (error) {
+    console.error('Error sending command:', error);
+  }
+}
 
 // Function to render train data
 function renderTrainData(trainData) {
@@ -32,12 +44,10 @@ function renderTrainData(trainData) {
   });
 }
 
-// Listen for updates
-const trainsRef = database.ref('trains');
-trainsRef.on('value', snapshot => {
-  if (snapshot.exists()) {
-    renderTrainData(snapshot.val());
-  } else {
-    document.getElementById('train-data').innerHTML = '<p>No train data available.</p>';
-  }
-});
+// Event listeners for buttons
+document.getElementById('open-track').addEventListener('click', () => sendCommand('open'));
+document.getElementById('close-track').addEventListener('click', () => sendCommand('close'));
+
+// Fetch train data initially and set interval to refresh
+fetchTrainData();
+setInterval(fetchTrainData, 5000);
