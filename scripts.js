@@ -1,4 +1,3 @@
-// Firebase configuration
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
@@ -13,27 +12,27 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+const auth = firebase.auth(); // Ensure this is defined immediately after initialization
 
 function handleLogin(event) {
-  event.preventDefault();
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+    event.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  auth.signInWithEmailAndPassword(email, password)
-      .then(() => {
-          document.getElementById("login").style.display = "none";
-          document.getElementById("dashboard").style.display = "block";
-      })
-      .catch(error => {
-          alert("Login Failed: " + error.message);
-      });
+    auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+        })
+        .catch(error => {
+            alert("Login Failed: " + error.message);
+        });
 }
 
 function showTab(tab) {
-  document.querySelectorAll(".content").forEach(el => el.classList.remove("active"));
-  document.querySelector(`#${tab}`).classList.add("active");
+    document.querySelectorAll(".content").forEach(el => el.classList.remove("active"));
+    document.querySelector(`#${tab}`).classList.add("active");
 
-  document.querySelectorAll(".nav button").forEach(el => el.classList.remove("active"));
-  document.querySelector(`#${tab}Tab`).classList.add("active");
+    document.querySelectorAll(".nav button").forEach(el => el.classList.remove("active"));
+    document.querySelector(`#${tab}Tab`).classList.add("active");
 }
